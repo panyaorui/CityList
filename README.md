@@ -12,7 +12,7 @@
 ### 2.设置定位权限NSLocationWhenInUseUsageDescription（使用应用程序时允许定位）
 ![image](https://github.com/panyaorui/CityList/blob/master/效果图/03.png)
 
-###直接跳转CityViewController即可
+### 3.直接跳转CityViewController即可
 ```swift
 var cityViewController:CityViewController = CityViewController(nibName: "CityViewController", bundle: nil);
         self.presentViewController(cityViewController, animated: true) { () -> Void in
