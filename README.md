@@ -1,6 +1,6 @@
 # 定位和选择城市
 
-默认动画效果
+## 动画效果
 
 ![image](https://github.com/panyaorui/CityList/blob/master/效果图/01.gif)
 
