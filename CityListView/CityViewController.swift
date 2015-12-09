@@ -118,8 +118,10 @@ class CityViewController: UIViewController,UISearchDisplayDelegate,UITableViewDe
         if(!self.tableview.isEqual(table)){ //搜索结果时
             return nil;
         }
-        let arr:NSArray = self.citySpell;
-        return arr as? [String];
+        let arr01:NSArray = self.citySpell;
+        let arr02:NSArray = NSArray(array: ["#","$"," *"]).arrayByAddingObjectsFromArray(arr01 as [AnyObject]);
+        
+        return arr02 as? [String];
     }
     
     func tableView(table: UITableView, viewForHeaderInSection section: Int) -> UIView? {
