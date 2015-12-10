@@ -9,23 +9,37 @@
 import UIKit
 
 class TableViewHeadSectionCell: UITableViewCell,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+    
+    var delegate:CityViewControllerDelegate?;
+    //回调函数
+    var action = {(str:String) -> Void in
+       
+    }
+
+    
     @IBOutlet weak var collectionView: UICollectionView!
    
-    var data = [String]!();
+    private var data = [String]!();
     override func awakeFromNib() {
         super.awakeFromNib()
 
     }
-   
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
     }
     
+    func addData(data:[String],city:(cityName:String)->Void){
+        self.data = data;
+        self.action = city;
+    }
+    
     func reloadData(){
         self.collectionView.reloadData();
     }
+    
+     ////////////////////  UICollectionViewDataSource   ////////////////////
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         return data!.count;
@@ -53,6 +67,14 @@ class TableViewHeadSectionCell: UITableViewCell,UICollectionViewDelegate,UIColle
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets
     {
         return UIEdgeInsets(top: 0, left:0, bottom: 0, right: 0);
+    }
+    
+     ////////////////////  UICollectionViewDelegate   ////////////////////
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let cityName:String = data[indexPath.row];
+        self.action(cityName);
+      //  print(cityName);
     }
 
     

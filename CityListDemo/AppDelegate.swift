@@ -12,14 +12,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var rootViewController:CityViewController!;
+    var rootViewController:MainViewController!;
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds);
         self.window?.backgroundColor = UIColor.blueColor();
-        rootViewController = CityViewController(nibName: "CityViewController", bundle: nil);
+        rootViewController = MainViewController(nibName: "MainViewController", bundle: nil);
         let nav:UINavigationController = UINavigationController(rootViewController: rootViewController);
         self.window?.rootViewController = nav;
         self.window?.makeKeyAndVisible();

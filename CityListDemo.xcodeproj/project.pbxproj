@@ -36,6 +36,8 @@
 		7177FA061C0436F700544DBE /* citydict.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7177FA051C0436F700544DBE /* citydict.plist */; settings = {ASSET_TAGS = (); }; };
 		71872D831C113A2600FA1DD5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71872D821C113A2600FA1DD5 /* CoreLocation.framework */; };
 		71872D841C113A4300FA1DD5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71872D801C113A1800FA1DD5 /* MapKit.framework */; };
+		719365FE1C1812FE008B54C0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719365FC1C1812FE008B54C0 /* MainViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		719365FF1C1812FE008B54C0 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719365FD1C1812FE008B54C0 /* MainViewController.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		7177FA051C0436F700544DBE /* citydict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = citydict.plist; path = Resource/citydict.plist; sourceTree = "<group>"; };
 		71872D801C113A1800FA1DD5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		71872D821C113A2600FA1DD5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		719365FC1C1812FE008B54C0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		719365FD1C1812FE008B54C0 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +208,8 @@
 				7177F9D91C03F14900544DBE /* LaunchScreen.storyboard */,
 				7154FBC61C0FE9B700F2A3AF /* CityListDemo-Bridging-Header.h */,
 				7177F9DC1C03F14900544DBE /* Info.plist */,
+				719365FC1C1812FE008B54C0 /* MainViewController.swift */,
+				719365FD1C1812FE008B54C0 /* MainViewController.xib */,
 			);
 			path = CityListDemo;
 			sourceTree = "<group>";
@@ -354,6 +360,7 @@
 				716E095D1C0EC62E009C696C /* TableViewCell.xib in Resources */,
 				7177F9DB1C03F14900544DBE /* LaunchScreen.storyboard in Resources */,
 				716E09571C0EC62E009C696C /* CityViewController.xib in Resources */,
+				719365FF1C1812FE008B54C0 /* MainViewController.xib in Resources */,
 				716E09521C0EC62E009C696C /* CollectionViewCell.xib in Resources */,
 				7177F9D81C03F14900544DBE /* Assets.xcassets in Resources */,
 			);
@@ -387,6 +394,7 @@
 				7105B4651C1673C100A5952C /* LocationManager.swift in Sources */,
 				716E09561C0EC62E009C696C /* CityViewController.swift in Sources */,
 				716E09531C0EC62E009C696C /* TableViewHeadSectionCell.swift in Sources */,
+				719365FE1C1812FE008B54C0 /* MainViewController.swift in Sources */,
 				7154FBDB1C0FE9B800F2A3AF /* NSString+PinYin4Cocoa.m in Sources */,
 				716E095A1C0EC62E009C696C /* SectionView.swift in Sources */,
 				7154FBDC1C0FE9B800F2A3AF /* PinyinFormatter.m in Sources */,

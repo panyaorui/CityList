@@ -8,12 +8,19 @@
 
 import UIKit
 
+protocol CityViewControllerDelegate{
+    func selectCity(city:String);
+}
+
 class CityViewController: UIViewController,UISearchDisplayDelegate,UITableViewDelegate,UITableViewDataSource,CLLocationManagerDelegate,LocationManagerDelegate {
     
     @IBOutlet weak var layoutTopConstraint: NSLayoutConstraint!
     @IBOutlet var searchDC: UISearchDisplayController!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableview: UITableView!
+    
+    /** 回调接口*/
+    var delegate:CityViewControllerDelegate?;
     
     
     
@@ -27,10 +34,15 @@ class CityViewController: UIViewController,UISearchDisplayDelegate,UITableViewDe
     var sectionCitySpell:NSMutableArray!;
     //搜索到得城市
     var searchCityArray:NSArray!;
-    /** 城市管理*/
+    //城市管理
     var locationManager:LocationManager!;
-    /** 当前城市名称*/
+    //当前定位城市名称
     var cityName:String = "正在获取...";
+    //最近访问城市
+    let historyCitys = ["北京","上海","广州"];
+    //热门城市
+    let hotCitys = ["上海","北京","广州","深圳","武汉","天津","西安","南京","杭州"];
+    
     
     
 
@@ -89,6 +101,20 @@ class CityViewController: UIViewController,UISearchDisplayDelegate,UITableViewDe
         }else{ //清空数据
         
         }
+    }
+    
+    /**
+     将选中城市名称返回并关闭当前页面
+    - parameter city: 城市名称
+    */
+    private func selectCity(city:String){
+        
+        if(self.delegate != nil){
+            self.delegate!.selectCity(city);
+            self.dismissViewControllerAnimated(true , completion: { () -> Void in
+            })
+        }
+        
     }
 
    //////////////////// UITableViewDataSource  ////////////////////
@@ -168,15 +194,17 @@ class CityViewController: UIViewController,UISearchDisplayDelegate,UITableViewDe
             //添加数据
             switch(section){
                 case 0: //定位城市
-                    cellHead!.data = [self.cityName];
+                    cellHead!.addData([self.cityName], city: selectCity)
                     cellHead!.reloadData();
                     break;
                 case 1: // 最近使用城市
-                    cellHead!.data = ["上海","北京","广州"];
+                    cellHead!.addData(historyCitys, city: selectCity);
+
                     break;
                 case 2: // 热门城市
-                    cellHead!.data = ["上海","北京","广州","深圳","武汉","天津","西安","南京","杭州"];
+                    cellHead!.addData(hotCitys, city: selectCity)
                     break;
+                
                 default:
                     break;
             }
@@ -201,6 +229,27 @@ class CityViewController: UIViewController,UISearchDisplayDelegate,UITableViewDe
         
         return cell!;
     }
+    
+    //////////////////// UITableViewDelegate  ////////////////////
+    
+    func tableView(table: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if(self.delegate != nil ){
+            var cityName:String = "";
+            if(table != self.tableview){
+                cityName = self.searchCityArray.objectAtIndex(indexPath.row) as! String;
+            }else{
+                let section = indexPath.section;
+                if(section > 2){//列表城市
+                    let key:NSString = self.sectionCitySpell.objectAtIndex(section) as! NSString;
+                    cityName = self.dict.objectForKey(key)!.objectAtIndex(indexPath.row) as! String;
+                }
+            }
+            self.selectCity(cityName);
+       }
+    }
+    
+    
+    
     //////////////////// UISearchDisplayDelegate  ////////////////////
     
     /**
@@ -222,7 +271,7 @@ class CityViewController: UIViewController,UISearchDisplayDelegate,UITableViewDe
     
     //shouldReloadTableForSearchString
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchString searchString: String?) -> Bool {
-         print("------");
+
         self.handlerSearch(searchString);
         return true;
     }
