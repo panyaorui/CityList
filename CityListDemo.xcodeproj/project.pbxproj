@@ -33,12 +33,12 @@
 		7177F9DB1C03F14900544DBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7177F9D91C03F14900544DBE /* LaunchScreen.storyboard */; };
 		7177F9E61C03F14900544DBE /* CityListDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177F9E51C03F14900544DBE /* CityListDemoTests.swift */; };
 		7177F9F11C03F14900544DBE /* CityListDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7177F9F01C03F14900544DBE /* CityListDemoUITests.swift */; };
-		7177FA061C0436F700544DBE /* citydict.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7177FA051C0436F700544DBE /* citydict.plist */; settings = {ASSET_TAGS = (); }; };
 		71872D831C113A2600FA1DD5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71872D821C113A2600FA1DD5 /* CoreLocation.framework */; };
 		71872D841C113A4300FA1DD5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71872D801C113A1800FA1DD5 /* MapKit.framework */; };
 		719365FE1C1812FE008B54C0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719365FC1C1812FE008B54C0 /* MainViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		719365FF1C1812FE008B54C0 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719365FD1C1812FE008B54C0 /* MainViewController.xib */; settings = {ASSET_TAGS = (); }; };
-		719845A31C191EDE00225577 /* SpecifyArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719845A21C191EDE00225577 /* SpecifyArray.swift */; settings = {ASSET_TAGS = (); }; };
+		71B61A3D1C2BCB7900508011 /* citydict.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B61A3C1C2BCB7900508011 /* citydict.plist */; settings = {ASSET_TAGS = (); }; };
+		71B61A3F1C2BCBCC00508011 /* SpecifyArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B61A3E1C2BCBCC00508011 /* SpecifyArray.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,12 +100,12 @@
 		7177F9EC1C03F14900544DBE /* CityListDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityListDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7177F9F01C03F14900544DBE /* CityListDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListDemoUITests.swift; sourceTree = "<group>"; };
 		7177F9F21C03F14900544DBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7177FA051C0436F700544DBE /* citydict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = citydict.plist; path = Resource/citydict.plist; sourceTree = "<group>"; };
 		71872D801C113A1800FA1DD5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		71872D821C113A2600FA1DD5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		719365FC1C1812FE008B54C0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		719365FD1C1812FE008B54C0 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		719845A21C191EDE00225577 /* SpecifyArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecifyArray.swift; sourceTree = "<group>"; };
+		71B61A3C1C2BCB7900508011 /* citydict.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = citydict.plist; path = CityListView/Resource/citydict.plist; sourceTree = SOURCE_ROOT; };
+		71B61A3E1C2BCBCC00508011 /* SpecifyArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecifyArray.swift; path = CityListView/Util/SpecifyArray.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +162,7 @@
 		716E09431C0EC5B0009C696C /* CityListView */ = {
 			isa = PBXGroup;
 			children = (
+				719845A11C191E2900225577 /* Util */,
 				7177FA041C0436EA00544DBE /* Resource */,
 				716E09491C0EC62E009C696C /* CityViewController.swift */,
 				716E094A1C0EC62E009C696C /* CityViewController.xib */,
@@ -203,7 +204,6 @@
 		7177F9CF1C03F14900544DBE /* CityListDemo */ = {
 			isa = PBXGroup;
 			children = (
-				719845A11C191E2900225577 /* Util */,
 				7154FBC51C0FE99200F2A3AF /* ZYPinYinSearchLib */,
 				716E09431C0EC5B0009C696C /* CityListView */,
 				7177F9D01C03F14900544DBE /* AppDelegate.swift */,
@@ -238,7 +238,7 @@
 		7177FA041C0436EA00544DBE /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				7177FA051C0436F700544DBE /* citydict.plist */,
+				71B61A3C1C2BCB7900508011 /* citydict.plist */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -255,7 +255,7 @@
 		719845A11C191E2900225577 /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				719845A21C191EDE00225577 /* SpecifyArray.swift */,
+				71B61A3E1C2BCBCC00508011 /* SpecifyArray.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -365,10 +365,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				716E095B1C0EC62E009C696C /* SectionView.xib in Resources */,
-				7177FA061C0436F700544DBE /* citydict.plist in Resources */,
 				716E09541C0EC62E009C696C /* TableViewHeadSectionCell.xib in Resources */,
 				7154FBDF1C0FE9B800F2A3AF /* unicode_to_hanyu_pinyin.txt in Resources */,
 				716E095D1C0EC62E009C696C /* TableViewCell.xib in Resources */,
+				71B61A3D1C2BCB7900508011 /* citydict.plist in Resources */,
 				7177F9DB1C03F14900544DBE /* LaunchScreen.storyboard in Resources */,
 				716E09571C0EC62E009C696C /* CityViewController.xib in Resources */,
 				719365FF1C1812FE008B54C0 /* MainViewController.xib in Resources */,
@@ -407,7 +407,7 @@
 				716E09531C0EC62E009C696C /* TableViewHeadSectionCell.swift in Sources */,
 				719365FE1C1812FE008B54C0 /* MainViewController.swift in Sources */,
 				7154FBDB1C0FE9B800F2A3AF /* NSString+PinYin4Cocoa.m in Sources */,
-				719845A31C191EDE00225577 /* SpecifyArray.swift in Sources */,
+				71B61A3F1C2BCBCC00508011 /* SpecifyArray.swift in Sources */,
 				716E095A1C0EC62E009C696C /* SectionView.swift in Sources */,
 				7154FBDC1C0FE9B800F2A3AF /* PinyinFormatter.m in Sources */,
 				7154FBE01C0FE9B800F2A3AF /* ZYPinYinSearch.m in Sources */,
