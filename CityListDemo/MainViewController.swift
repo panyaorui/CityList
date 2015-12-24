@@ -20,7 +20,7 @@ class MainViewController: UIViewController,CityViewControllerDelegate {
 
     
     @IBAction func actionCity(sender: AnyObject) {
-          cityController = CityViewController(nibName: "CityViewController", bundle: nil);
+        cityController = CityViewController(nibName: "CityViewController", bundle: nil);
          cityController.delegate = self;
            self.presentViewController(cityController, animated: true) { () -> Void in
             

@@ -39,9 +39,13 @@ class CityViewController: UIViewController,UISearchDisplayDelegate,UITableViewDe
     //当前定位城市名称
     var cityName:String = "正在获取...";
     //最近访问城市
-    let historyCitys = ["北京","上海","广州"];
+    var historyCitys = ["北京","上海","广州"];
     //热门城市
     let hotCitys = ["上海","北京","广州","深圳","武汉","天津","西安","南京","杭州"];
+    //最近访问城市数据
+    var dataHistoryCitys:SpecifyArray!;
+    let keyHistory = "keyHistory";
+    
     
     
     
@@ -54,6 +58,7 @@ class CityViewController: UIViewController,UISearchDisplayDelegate,UITableViewDe
         cityArray = NSMutableArray();
         citySpell = NSMutableArray();
         searchCityArray = NSArray();
+        dataHistoryCitys = SpecifyArray(max: 3);
        
         getCityData();
         
@@ -67,6 +72,14 @@ class CityViewController: UIViewController,UISearchDisplayDelegate,UITableViewDe
          locationManager = LocationManager();
         locationManager.delegate = self;
         locationManager.startLocationCity();
+        //获取最近放问城市
+        var object = NSUserDefaults.standardUserDefaults().arrayForKey(keyHistory);
+        if(object == nil){
+            self.dataHistoryCitys.addObject("北京");
+        }else{
+            self.dataHistoryCitys.addArray(object!);
+        }
+        self.historyCitys = self.dataHistoryCitys.getaArray() as! [String];
         
         let path = NSBundle.mainBundle().pathForResource("citydict", ofType: "plist");
         self.dict = NSMutableDictionary(contentsOfFile: path!);
@@ -110,6 +123,8 @@ class CityViewController: UIViewController,UISearchDisplayDelegate,UITableViewDe
     private func selectCity(city:String){
         
         if(self.delegate != nil){
+            dataHistoryCitys.addObject(city);
+            NSUserDefaults.standardUserDefaults().setObject(dataHistoryCitys.getaArray(), forKey: keyHistory);
             self.delegate!.selectCity(city);
             self.dismissViewControllerAnimated(true , completion: { () -> Void in
             })
